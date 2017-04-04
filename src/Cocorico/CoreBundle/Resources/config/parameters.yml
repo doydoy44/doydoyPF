@@ -1,7 +1,7 @@
 parameters:
     #### Environment independant parameters. Same values in dev, staging, prod environments  ####
     #Site general infos
-    cocorico.site_name: Cocorico
+    cocorico.site_name: Dillup
     cocorico.phone: +33(0) 1 43 79 86 30
     cocorico.address: 67 rue de Provence, 75009
     cocorico.short_description: 'Cocorico is collaborative consumption platform'
