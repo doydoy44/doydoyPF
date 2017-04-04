@@ -2,10 +2,10 @@ parameters:
     #### Environment independant parameters. Same values in dev, staging, prod environments  ####
     #Site general infos
     cocorico.site_name: Dillup
-    cocorico.phone: +33(0) 1 43 79 86 30
-    cocorico.address: 67 rue de Provence, 75009
+    cocorico.phone: 06 64 78 11 14
+    cocorico.address: 15 rue Edmond Bire, 44000 Nantes
     cocorico.short_description: 'Cocorico is collaborative consumption platform'
-    cocorico.contact_mail: contact@cocorico.io
+    cocorico.contact_mail: contact@dillup.com
     #To obfuscate see http://wbwip.com/wbw/emailencoder.html
     cocorico.contact_mail_obfuscated: "&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#111;&#099;&#111;&#114;&#105;&#099;&#111;&#046;&#105;&#111;"
     cocorico.from_email: no-reply@cocorico.io
