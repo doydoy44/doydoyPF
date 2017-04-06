@@ -2,6 +2,7 @@ app/DoctrineMigrations
 app/bootstrap.php.cache
 app/spool
 app/cache
+nbproject
 !app/cache/.gitkeep
 app/config/parameters.yml
 app/config/parameters_test.yml
@@ -81,3 +82,4 @@ tmp/tmp.json
 #!tmp/mangopay/
 #!tmp/mangopay/.gitkeep
 #tmp/mangopay/MangoPaySdkStorage.tmp.php
+/nbproject/private/
