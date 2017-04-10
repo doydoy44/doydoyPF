@@ -16,7 +16,6 @@
         {% trans_default_domain 'cocorico_home' %}
 
         {% block search_form %}
-            {{ render(controller('CocoricoCoreBundle:Frontend/ListingSearch:searchHomeForm')) }}
         {% endblock %}
 
         {% block main %}
@@ -25,16 +24,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-lg-8 col-lg-push-2">
-                            <div class="title-holder">
-                                <div class="title-frame">
-                                    <h1>
-                                        <span class="thin-text">Lorem</span>
-                                        ipsum dolor
-                                        <span class="text">sit amet,</span>
-                                        consectetur suspendisse.
-                                    </h1>
-                                </div>
-                            </div>
+            {{ render(controller('CocoricoCoreBundle:Frontend/ListingSearch:searchHomeForm')) }}
                         </div>
                     </div>
                 </div>
