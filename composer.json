@@ -83,8 +83,7 @@
     "fzaninotto/faker": "~1.5",
     "phpunit/phpunit": "4.3.*",
     "vipsoft/doctrine-data-fixtures-extension": "3.0.*@dev",
-    "hpatoio/deploy-bundle": "~1.5",
-    "kendrick/symfony-debug-toolbar-git": "^1.4"
+    "hpatoio/deploy-bundle": "~1.5"
   },
   "scripts": {
     "post-install-cmd": [
