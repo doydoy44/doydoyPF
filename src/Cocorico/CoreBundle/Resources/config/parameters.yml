@@ -7,7 +7,7 @@ parameters:
     cocorico.short_description: 'Cocorico is collaborative consumption platform'
     cocorico.contact_mail: contact@dillup.com
     #To obfuscate see http://wbwip.com/wbw/emailencoder.html
-    cocorico.contact_mail_obfuscated: "&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#099;&#111;&#099;&#111;&#114;&#105;&#099;&#111;&#046;&#105;&#111;"
+    cocorico.contact_mail_obfuscated: "&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#100;&#105;&#108;&#108;&#117;&#112;&#046;&#099;&#111;&#109;"
     cocorico.from_email: no-reply@cocorico.io
     cocorico.webmaster_email: webmaster@cocorico.io
     cocorico.vat_number: FR 12 123 456 789
