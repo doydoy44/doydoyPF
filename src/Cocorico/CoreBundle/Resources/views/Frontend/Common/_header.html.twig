@@ -3,28 +3,6 @@
 <!-- header of the page -->
 <header id="header">
     <!-- topbar -->
-    <div class="topbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="tel:{{ cocorico_phone|replace({'+': '', '(': '', ')': '', ' ': ''}) }}"
-                               tabindex="10">
-                                <i class="icon-phone"></i>{{ cocorico_phone }}
-                            </a>
-                        </li>
-                        <li>
-                            <a tabindex="11" href="mailto:{{ cocorico_contact_mail_obfuscated|raw }}">
-                                <i class="icon-mail-alt"></i>{{ cocorico_contact_mail_obfuscated|raw }}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
