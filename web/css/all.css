@@ -6064,7 +6064,8 @@ span.btn:focus {
     margin: 0 0 50px;
     /*background: url(../images/bg-section.png) no-repeat 50% 0 #58595b;*/
     background: url(../images/bg-golf.jpg) no-repeat 50% 0 #FFF;
-    height: 981px;
+    background-position: center;
+    padding: 30px;
 }
 
 .visual .title-holder {
