@@ -5714,9 +5714,10 @@ span.btn:focus {
 }
 
 .form-category .title {
-    float: left;
+    float: right;
     width: 74px;
-    color: #58595b;
+    /*color: #58595b;*/
+    color: #FFFF;
     font-weight: normal;
     margin: 7px 4px 0 0;
 }
@@ -5724,7 +5725,7 @@ span.btn:focus {
 .form-category .title label {
     margin: 0;
     display: inline;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .form-category .field-holder,
