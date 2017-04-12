@@ -59,13 +59,6 @@
 
                         {{ form_start(form, {'attr': {'id': 'booking-new'}}) }}
 
-                        <!-- alert -->
-                        <div role="alert" class="alert alert-success">
-                            <i class="ico lock">lock</i>
-
-                            <p>{{ 'booking.secured_message'|trans }}</p>
-                        </div>
-
                         <!-- schedule -->
                         {#{{ form_errors(form) }}#}
                         {{ form_errors(form.date_range) }}
