@@ -59,6 +59,15 @@
 
     <script>
         $(function () {
+            
+            changeDateEnd = function  () {
+                var $dateDeb = $form.find("#start-date");
+                var $dateEnd = $form.find("#end-date");
+
+                $dateEnd.val($dateDeb.val());
+                console.log($dateEnd.val());
+            };
+            
             var timeUnitIsDay = {{ timeUnitIsDay ? 'true' : 'false' }};
 
             initDatePickerAjax(function () {
@@ -66,7 +75,17 @@
             });
 
             var $form = $("#booking-price-form");
-
+            
+            var $dateDeb = $form.find("#start-date");
+            var $dateEnd = $form.find("#end-date");
+            $dateEnd.closest('.col').hide();
+            
+            var functionDateStartSelect = $dateDeb.datepicker("option", "onSelect");
+            $dateDeb.datepicker("option", "onSelect", function(){
+                changeDateEnd();
+                functionDateStartSelect(); 
+            });
+                        
             $form.submit(function () {
                 //Remove price and submit button
                 //Disable fields and add loading until form is rendered
@@ -80,6 +99,7 @@
 
             $("#submit-booking").click(function (e) {
                 e.preventDefault();
+                
                 var $errors = $form.find('div.errors');
                 //Submit form if no errors
                 if (!$errors.length || ($errors.length && !$errors.is(":visible"))) {
