@@ -340,7 +340,7 @@ $.fn.submitAjaxForm = function (callbackSuccess) {
  * @param parentDatesElt string|null Optional parent element of dates and time fields.
  * Used when many date fields are on the same page
  */
-function initDatePickerAjax(callbackSuccess, parentDatesElt) {
+function initDatePickerAjax(callbackSuccess, parentDatesElt, beforeOnselect) {
     parentDatesElt = (typeof parentDatesElt === 'undefined') ? '' : parentDatesElt + ' ';
     var today = new Date();
 
@@ -364,6 +364,9 @@ function initDatePickerAjax(callbackSuccess, parentDatesElt) {
             dateFormat: "dd/mm/yy",
             minDate: today,
             onSelect: function (selectedDate, inst) {
+                if (typeof beforeOnselect !== 'undefined') {
+                    beforeOnselect();
+                }
                 var input = $(this);
                 var option = input.is(from) ? 'minDate' : 'maxDate';
                 var instance = input.data('datepicker');
