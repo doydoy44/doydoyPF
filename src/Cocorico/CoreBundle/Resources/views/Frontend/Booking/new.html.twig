@@ -75,7 +75,7 @@
                                         'type': 'hidden'
                                     }) }}
                                 </li>
-                                <li>
+                                <li class="hidden">
                                     {{ form_errors(form.date_range.end) }}
                                     {{ form_label(form.date_range.end) }}
 
@@ -96,7 +96,7 @@
                                     {{ form_widget(form.time_range) }}
                                 {% endif %}
                             </ul>
-
+		{#
                             <ul class="list-inline price-list">
                                 <li>
                                     {{ 'booking.amount:'|trans }}
@@ -114,6 +114,7 @@
                                     </button>
                                 </li>
                             </ul>
+		#}
                         </div>
 
                         {% if optionBundleEnabled %}
@@ -151,7 +152,7 @@
                                             </small>
                                         </span>
                                     </li>
-
+				{#
                                     <li>
                                         {{ 'booking.fees.amount:'|trans }}
                                         <strong data-id="fee-asker">{{ fee_as_asker }}</strong>
@@ -160,6 +161,7 @@
                                                 data-original-title="{{ 'booking.fees.help'|trans }}">?
                                         </button>
                                     </li>
+				#}
                                 </ul>
                             </div>
                             <!-- /.alert alert-info -->
