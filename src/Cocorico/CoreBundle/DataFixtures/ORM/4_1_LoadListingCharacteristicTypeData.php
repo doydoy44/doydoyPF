@@ -43,6 +43,25 @@ class LoadListingCharacteristicTypeData extends AbstractFixture implements Order
         $this->addReference('characteristic_type_custom_1', $listingCharacteristicType);
 
 
+        //Pour INDOOR/OUTDOOR : Valeur personnalisée 1 => INDOOR et Valeur personnalisée 2 => OUTDOOR
+        $listingCharacteristicType = new ListingCharacteristicType();
+        $listingCharacteristicType->setName("indoor_outdoor");
+        $manager->persist($listingCharacteristicType);
+        $manager->flush();
+        $this->addReference('characteristic_type_indoor_outdoor', $listingCharacteristicType);
+        //Pour NIVEAU SPORTIF : Valeur personnalisée 1 => AMATEUR ; Valeur personnalisée 2 => CONFIRME ; Valeur personnalisée 3 => PROFESSIONNEL
+        $listingCharacteristicType = new ListingCharacteristicType();
+        $listingCharacteristicType->setName("sport_level");
+        $manager->persist($listingCharacteristicType);
+        $manager->flush();
+        $this->addReference('characteristic_type_sport_level', $listingCharacteristicType);
+        //Pour le NOMBRE DE PERSONNES : il faudrait voir un système pour mettre 1 à 5 ; +5; +10
+        $listingCharacteristicType = new ListingCharacteristicType();
+        $listingCharacteristicType->setName("nb_person");
+        $manager->persist($listingCharacteristicType);
+        $manager->flush();
+        $this->addReference('characteristic_type_nb_person', $listingCharacteristicType);
+
     }
 
     /**
