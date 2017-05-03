@@ -110,7 +110,8 @@ class DateRangeType extends AbstractType
                         )
                     )->add(
                         'end',
-                        $dateEndType,
+//                        $dateEndType,
+                        'date_hidden',
                         array_merge(
                             array(
                                 'property_path' => 'end',
@@ -129,8 +130,27 @@ class DateRangeType extends AbstractType
 
         $builder->addViewTransformer($options['transformer']);
         $builder->addEventSubscriber($options['validator']);
+        $builder->addEventListener(
+                FormEvents::PRE_SUBMIT,
+                array($this, 'onPreSubmit')
+            )
+        ;
     }
 
+    /**
+     * Au moment de la submission 
+     * on indique que la date de fin est la même que la date de début
+     * 
+     * @param FormEvent $event
+     */
+    public function onPreSubmit(FormEvent $event)
+    {        
+        $dateRangeArray = $event->getData();
+        $dateRangeArray['end'] = $dateRangeArray['start'];
+        $event->setData($dateRangeArray);
+    }
+
+    
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
