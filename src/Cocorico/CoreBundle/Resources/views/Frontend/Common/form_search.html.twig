@@ -11,44 +11,43 @@
     <legend class="hidden">form-category</legend>
     <div class="form-holder">
         <div class="col-sm-10">
-            <div class="categories col-sm-6">
-                <div class="col-sm-4">
-                    <strong class="title">
-                        {{ form_label(form.categories) }}
-                    </strong>
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <div class="col-sm-4">
+                        <strong class="title">
+                            {{ form_label(form.categories) }}
+                        </strong>
+                    </div>
+
+                    <div class="multiselect col-sm-8">
+                        {{ form_widget(form.categories) }}
+                    </div>
                 </div>
 
-                <div class="multiselect col-sm-8">
-                    {{ form_widget(form.categories) }}
+                <div class="col-sm-6">
+                    <div class="col-sm-4">
+                        <strong class="title">
+                            {{ form_label(form.location.address, null, {
+                                'required': false
+                            }) }}
+                        </strong>
+                    </div>
+
+                    <div class="field-holder col-sm-8">
+                        {{ form_errors(form.location.address) }}
+                        {{ form_widget(form.location.address, {
+                            'id': 'location',
+                            'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'listing.search.form.address.placeholder'|trans
+                            }
+                        } ) }}
+                        {{ form_rest(form.location) }}
+                    </div>
                 </div>
             </div>
 
-
-            <div class="location col-sm-6">
-                <div class="col-sm-4">
-                    <strong class="title">
-                        {{ form_label(form.location.address, null, {
-                            'required': false
-                        }) }}
-                    </strong>
-                </div>
-
-                <div class="field-holder col-sm-8">
-                    {{ form_errors(form.location.address) }}
-                    {{ form_widget(form.location.address, {
-                        'id': 'location',
-                        'attr': {
-                            'class': 'form-control',
-                            'placeholder': 'listing.search.form.address.placeholder'|trans
-                        }
-                    } ) }}
-                    {{ form_rest(form.location) }}
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-10">
-            <div class="time col-sm-12">
+            <div class="col-sm-12">
                 {#In case of modification don't forget to add fields "start, end AND nb_days" #}
                 {{ form_widget(form.date_range) }}
 
@@ -60,7 +59,7 @@
                             </strong>
                         </div>
 
-                        <div class="input-append field-holder">
+                        <div class="input-append field-holder col-sm-8">
                             {{ form_errors(form.flexibility) }}
                             {{ form_widget(form.flexibility, {
                                 'attr': {
