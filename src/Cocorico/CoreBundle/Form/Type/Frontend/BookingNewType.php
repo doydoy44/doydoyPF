@@ -227,9 +227,14 @@ class BookingNewType extends AbstractType implements TranslationContainerInterfa
                 'textarea',
                 array(
                     'label' => 'booking.form.message',
-                    'required' => true
+                    'required' => true,
                 )
             );
+        $builder->get('message')->addEventListener(
+                FormEvents::PRE_SET_DATA,
+                array($this, 'onPreSetData')
+            )
+        ;
 
         //Dispatch BOOKING_NEW_FORM_BUILD Event. Listener listening this event can add fields and validation
         //Used for example by some payment provider bundle like mangopay
@@ -459,6 +464,21 @@ class BookingNewType extends AbstractType implements TranslationContainerInterfa
 
     }
 
+    /**
+     * Au moment de la submission 
+     * on indique que la date de fin est la même que la date de début
+     * 
+     * @param FormEvent $event
+     * @todo Dillup : Message à traduire
+     */
+    public function onPreSetData(FormEvent $event)
+    {        
+        $message = $event->getData();
+        if (empty($message)) {
+            $message = 'Bonjour, je souhaite effectuer la réservation suivante'; 
+        }
+        $event->setData($message);
+    }
 
     /**
      * @param OptionsResolver $resolver
