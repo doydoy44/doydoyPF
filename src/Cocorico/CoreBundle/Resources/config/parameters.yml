@@ -145,10 +145,12 @@ parameters:
 
     #Does a booking request can be made with a start equal to end. If set to true end_day_included must be set to true
     #Does a single day is allowed in search
+    #cocorico.booking.allow_single_day: false
     cocorico.booking.allow_single_day: true
 
     #Does a booking request include the end day in the booking duration.
     #Does the end day is included in search.
+    #cocorico.booking.end_day_included: false
     cocorico.booking.end_day_included: true
 
     #Minimum days between booking request and booking starting day
@@ -160,6 +162,7 @@ parameters:
     #Minimum hours between booking request and booking starting time
     #Or Number of hours to add to the current time to consider start time as valid
     #Ex : 8 -> the booking can be requested at least eight hours before it start.
+    #cocorico.booking.min_start_time_delay: 12
     cocorico.booking.min_start_time_delay: O
 
     #Refund percentage rules depending on Listing Cancelation Policies
