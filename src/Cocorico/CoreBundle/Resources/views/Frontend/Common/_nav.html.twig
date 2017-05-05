@@ -40,14 +40,6 @@
     "link": path('cocorico_dashboard_booking_asker'),
     "text": 'nav.dashboard.bookings.link'|trans
     },
-    "payments": {
-    "link": path('cocorico_dashboard_booking_payin_asker'),
-    "text": 'nav.dashboard.payments.link'|trans
-    },
-    "comments": {
-    "link": path('cocorico_dashboard_reviews_received'),
-    "text": 'nav.dashboard.comments.link'|trans
-    },
     "profile": {
     "link": path('cocorico_user_dashboard_profile_edit_about_me') ,
     "text": 'nav.dashboard.profile.link'|trans
@@ -57,6 +49,15 @@
     "text": 'nav.logout.link'|trans
     }
     } -%}
+    
+    {#"payments": {
+    "link": path('cocorico_dashboard_booking_payin_asker'),
+    "text": 'nav.dashboard.payments.link'|trans
+    },
+    "comments": {
+    "link": path('cocorico_dashboard_reviews_received'),
+    "text": 'nav.dashboard.comments.link'|trans
+    },#}
 
 {%- if app.user is not null and is_granted("IS_AUTHENTICATED_FULLY") -%}
     <ul class="dropdown-menu display-sub-tabs newstyle" role="menu">
