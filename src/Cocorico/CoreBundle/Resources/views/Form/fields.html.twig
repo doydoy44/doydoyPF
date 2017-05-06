@@ -520,14 +520,13 @@
     Date range widget
 #}
 {%- block date_range_widget -%}
-    <div class="col-sm-6">
-        <div class="datepicker-holder day-fields display-{{ daysDisplayMode }}">
+        <div class="form-group datepicker-holder day-fields display-{{ daysDisplayMode }}">
             {{ form_errors(form.start) }}
-            <div class="col-sm-4">
-                <strong class="title">{{ form_label(form.start) }}</strong>
-            </div>
+            <strong class="">
+                {{ form_label(form.start) }}
+            </strong>
 
-            <div class="col-sm-8 input-append date field-holder">
+            <div class="input-append date field-holder">
                 {{ form_widget(form.start,{
                     'type': 'text',
                     'attr': {
@@ -539,12 +538,10 @@
                     <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></i>
                 </span>
             </div>
-
+        </div>
             {#hidden#}
             {{ form_errors(form.end) }}
             {{ form_widget(form.end) }}
-        </div>
-    </div>
 {%- endblock -%}
 
 
@@ -632,16 +629,14 @@
     If timePicker parameter is true then select time fields are replaced by timepicker
 #}
 {%- block time_range_widget -%}
-    <div class="col-sm-6 timepicker-holder time-fields display-{{ timesDisplayMode }}">
-            <div class="col-sm-3">
-                <strong class="title">
-                    {{ form_label(form.start) }}
-                </strong>
-            </div>
+    <div class="timepicker-holder time-fields display-{{ timesDisplayMode }} form-group">
+            <strong class="">
+                {{ form_label(form.start) }}
+            </strong>
 
             {{ form_errors(form.start) }}
             {% if timePicker %}
-                <div class='col-sm-4 input-group date' id='datetimepicker3'>
+                <div class='input-append date' id='datetimepicker3'>
                     {{ form_widget(form.start_picker,{
                         'attr': {
                             'class': 'form-control',
@@ -659,18 +654,17 @@
             {% else %}
                 {{ form_widget(form.start) }}
             {% endif %}
+    </div>
 
         {% if timesDisplayMode == "duration" %}
             {#In new booking page there is no nb_minute fields#}
             {% if form.nb_minutes is defined %}
                 {#display duration field#}
-            <div class="col-sm-3">
-                <strong class="title">
+            <div class="form-group">
+                <strong class="">
                     {{ form_label(form.nb_minutes, (-1)|add_time_unit_text|capitalize) }}
                 </strong>
-            </div>
 
-            <div class="col-sm-2">
                 {{ form_errors(form.nb_minutes) }}
                 {{ form_widget(form.nb_minutes) }}
             </div>
@@ -706,7 +700,6 @@
                 {{ form_widget(form.end) }}
             {% endif %}
         {% endif %}
-        </div>
 {%- endblock -%}
 
 {#

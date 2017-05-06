@@ -380,8 +380,8 @@ li.time-fields {
 }
 
 .time-fields label, .form-category .nb-days .title label {
-    line-height: 36px;
-    height: 33px;
+/*    line-height: 36px;
+    height: 33px;*/
 }
 
 /*.time-fields *, .time-ranges li * {*/

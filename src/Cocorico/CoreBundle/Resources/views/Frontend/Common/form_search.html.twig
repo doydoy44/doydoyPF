@@ -3,37 +3,27 @@
 {% include 'CocoricoCoreBundle:Frontend/Common:_flash.html.twig' %}
 <!-- form-category -->
 
-{{ form_start(form, {'attr': {'class': 'form-category alt col-xs-12'}}) }}
+{{ form_start(form, {'attr': {'class': 'form-category alt form-inline'}}) }}
 
 {{ form_errors(form) }}
 
 <fieldset>
     <legend class="hidden">form-category</legend>
-    <div class="form-holder">
-        <div class="col-sm-10">
-            <div class="col-sm-12">
-                <div class="col-sm-6">
-                    <div class="col-sm-4">
-                        <strong class="title">
+        <div class="form-holder">
+                <div class="form-group">
                             {{ form_label(form.categories) }}
-                        </strong>
-                    </div>
 
-                    <div class="multiselect col-sm-8">
+                    <div class="multiselect">
                         {{ form_widget(form.categories) }}
                     </div>
                 </div>
 
-                <div class="col-sm-6">
-                    <div class="col-sm-4">
-                        <strong class="title">
+                <div class="form-group">
                             {{ form_label(form.location.address, null, {
                                 'required': false
                             }) }}
-                        </strong>
-                    </div>
 
-                    <div class="field-holder col-sm-8">
+                    <div class="field-holder">
                         {{ form_errors(form.location.address) }}
                         {{ form_widget(form.location.address, {
                             'id': 'location',
@@ -45,21 +35,17 @@
                         {{ form_rest(form.location) }}
                     </div>
                 </div>
-            </div>
 
-            <div class="col-sm-12">
                 {#In case of modification don't forget to add fields "start, end AND nb_days" #}
                 {{ form_widget(form.date_range) }}
 
                 {% if timeUnitFlexibility and form.flexibility is defined %}
-                    <div class="flexibility col-sm-4">
-                        <div class="col-sm-4">
+                    <div class="flexibility form-group">
                             <strong class="title">
                                 {{ form_label(form.flexibility) }}
                             </strong>
-                        </div>
 
-                        <div class="input-append field-holder col-sm-8">
+                        <div class="input-append field-holder">
                             {{ form_errors(form.flexibility) }}
                             {{ form_widget(form.flexibility, {
                                 'attr': {
@@ -71,17 +57,13 @@
                     </div>
                 {% endif %}
 
-                {% if not timeUnitIsDay %}
-                    {{ form_widget(form.time_range) }}
-                {% endif %}
-            </div>
-        </div>
 
-        <div class="col-sm-2">
+                {% if not timeUnitIsDay %}
+                   {{ form_widget(form.time_range) }}
+                {% endif %}
+
             <input type="submit" value="{{ 'listing.search'|trans }}" class="btn btn-default">
         </div>
-    </div>
-
     {% block form_search_filters %}
     {% endblock %}
 
