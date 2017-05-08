@@ -20,6 +20,14 @@
     "ariaControls": "properties",
     "dataText": "Mes annonces"
     },
+    "profile": {
+    "link": path('cocorico_user_dashboard_profile_edit_about_me') ,
+    "text": 'nav.dashboard.profile.link'|trans,
+    "ariaControls": "profile",
+    "dataText": "Mon profil"
+    }
+    } -%}
+{#
     "payments": {
     "link": path('cocorico_dashboard_booking_bank_wire_offerer'),
     "text": 'nav.dashboard.payments.link'|trans,
@@ -31,14 +39,7 @@
     "text": 'nav.dashboard.comments.link'|trans,
     "ariaControls": "comments",
     "dataText": "Commentaires"
-    },
-    "profile": {
-    "link": path('cocorico_user_dashboard_profile_edit_about_me') ,
-    "text": 'nav.dashboard.profile.link'|trans,
-    "ariaControls": "profile",
-    "dataText": "Mon profil"
-    }
-    } -%}
+    },#}
 {%- else -%}
     {%- set menuItems = {
     "messages": {
@@ -53,6 +54,14 @@
     "ariaControls": "reservations",
     "dataText": "Mes reservations"
     },
+    "profile": {
+    "link": path('cocorico_user_dashboard_profile_edit_about_me') ,
+    "text": 'nav.dashboard.profile.link'|trans,
+    "ariaControls": "profile",
+    "dataText": "Mon profil"
+    }
+    } -%}
+{#
     "payments": {
     "link": path('cocorico_dashboard_booking_payin_asker'),
     "text": 'nav.dashboard.payments.link'|trans,
@@ -64,14 +73,7 @@
     "text": 'nav.dashboard.comments.link'|trans,
     "ariaControls": "comments",
     "dataText": "Commentaires"
-    },
-    "profile": {
-    "link": path('cocorico_user_dashboard_profile_edit_about_me') ,
-    "text": 'nav.dashboard.profile.link'|trans,
-    "ariaControls": "profile",
-    "dataText": "Mon profil"
-    }
-    } -%}
+    },#}
 {%- endif -%}
 
 {%- if is_granted("IS_AUTHENTICATED_FULLY") -%}
