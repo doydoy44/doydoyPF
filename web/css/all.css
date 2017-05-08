@@ -5677,7 +5677,7 @@ span.btn:focus {
 .form-category {
     position: relative;
     padding: 16px 0 12px;
-    /*background: #f6f6f6;*/
+    background: #999;
 }
 
 .form-category .area {
@@ -6061,14 +6061,13 @@ span.btn:focus {
 
 /* visual */
 .visual {
-    color: #ffffff;
-    text-shadow: 1px 1px 2px black; 
+    color: #98999b;
     font-size: 20px;
     margin: 0 0 50px;
     /*background: url(../images/bg-section.png) no-repeat 50% 0 #58595b;*/
     background: url(../images/bg-golf.jpg) no-repeat 50% 0 #FFF;
     background-position: center;
-    padding: 200px 30px;
+    padding: 400px 10px 0 10px;
 }
 
 .visual .title-holder {

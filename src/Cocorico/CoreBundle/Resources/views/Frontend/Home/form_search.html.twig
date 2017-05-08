@@ -10,7 +10,7 @@
     <legend class="hidden">form-category</legend>
     <div class="col-xs-12">
         <div class="col-xs-12 col-sm-4">
-            <div class="col-sm-5">
+            <div class="col-sm-5 text-right">
                 <strong class="title">
                     {{ form_label(form.categories) }}
                 </strong>
@@ -23,8 +23,8 @@
         </div>
 
         <div class="col-xs-12 col-sm-4 col-sm-offset-1">
-            <div class="col-sm-4">
-                <strong class="title text-right">
+            <div class="col-sm-4 text-right">
+                <strong class="title">
                     {{ form_label(form.location.address, null, {
                         'required': false
                     }) }}
