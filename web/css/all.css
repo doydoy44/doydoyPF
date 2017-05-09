@@ -5689,7 +5689,7 @@ span.btn:focus {
 }
 
 .form-category input.btn-default {
-    top: 0;
+    /*top: 0;*/
     right: 2px;
     width: 178px;
     font-weight: 700;
@@ -5777,7 +5777,8 @@ span.btn:focus {
 }
 
 .form-category .form-holder input.btn-default {
-    top: 15px;
+    /*top: 15px;*/
+    bottom: 15px;
     right: 21px;
     width: 139px;
 }
