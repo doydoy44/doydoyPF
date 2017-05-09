@@ -44,6 +44,11 @@ class DateRangeType extends AbstractType
         if (isset($options["days_max"])) {
             $this->daysMax = $options["days_max"];
         }
+        if ($options['DateEndvisibleForAvailabilities']) {
+            $eventForDateEnd = false;
+        } else {
+            $eventForDateEnd = true;
+        }
 
         $builder->addEventListener(
             FormEvents::PRE_SET_DATA,
@@ -95,7 +100,10 @@ class DateRangeType extends AbstractType
                             );
                     }
                 }
-
+                if (!$options['DateEndvisibleForAvailabilities']) {
+                    $dateEndType = 'date_hidden';
+                } 
+                
                 $form
                     ->add(
                         'start',
@@ -110,8 +118,7 @@ class DateRangeType extends AbstractType
                         )
                     )->add(
                         'end',
-//                        $dateEndType,
-                        'date_hidden',
+                        $dateEndType,
                         array_merge(
                             array(
                                 'property_path' => 'end',
@@ -130,11 +137,14 @@ class DateRangeType extends AbstractType
 
         $builder->addViewTransformer($options['transformer']);
         $builder->addEventSubscriber($options['validator']);
-        $builder->addEventListener(
-                FormEvents::PRE_SUBMIT,
-                array($this, 'onPreSubmit')
-            )
-        ;
+        
+        if ($eventForDateEnd){
+            $builder->addEventListener(
+                    FormEvents::PRE_SUBMIT,
+                    array($this, 'onPreSubmit')
+                )
+            ;
+        }
     }
 
     /**
@@ -164,7 +174,8 @@ class DateRangeType extends AbstractType
                 'end_day_included' => true,
                 'display_mode' => 'range',
                 'min_start_delay' => 0,
-                'days_max' => $this->daysMax
+                'days_max' => $this->daysMax,
+                'DateEndvisibleForAvailabilities' => false,
             )
         );
 

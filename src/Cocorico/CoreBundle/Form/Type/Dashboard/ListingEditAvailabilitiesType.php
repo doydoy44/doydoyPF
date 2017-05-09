@@ -57,6 +57,7 @@ class ListingEditAvailabilitiesType extends AbstractType
                     'end_options' => array(
                         'label' => 'listing.form.end',
                     ),
+                    'DateEndvisibleForAvailabilities' => true,
                     'error_bubbling' => false,
                     'days_max' => $this->daysMaxEdition
                 )
