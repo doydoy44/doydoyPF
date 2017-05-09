@@ -13,14 +13,6 @@
     "link": path('cocorico_dashboard_listing'),
     "text": 'nav.dashboard.listings.link'|trans
     },
-    "payments": {
-    "link": path('cocorico_dashboard_booking_bank_wire_offerer'),
-    "text": 'nav.dashboard.payments.link'|trans
-    },
-    "comments": {
-    "link": path('cocorico_dashboard_reviews_received'),
-    "text": 'nav.dashboard.comments.link'|trans
-    },
     "profile": {
     "link": path('cocorico_user_dashboard_profile_edit_about_me') ,
     "text": 'nav.dashboard.profile.link'|trans
@@ -30,7 +22,14 @@
     "text": 'nav.logout.link'|trans
     },
     } -%}
-
+    {#"payments": {
+    "link": path('cocorico_dashboard_booking_bank_wire_offerer'),
+    "text": 'nav.dashboard.payments.link'|trans
+    },
+    "comments": {
+    "link": path('cocorico_dashboard_reviews_received'),
+    "text": 'nav.dashboard.comments.link'|trans
+    },#}
     {%- set askerItems = {
     "messages": {
     "link": path('cocorico_dashboard_message'),
