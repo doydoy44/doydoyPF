@@ -707,7 +707,7 @@
     Used to hide all date and time fields and to display only field value
 #}
 {%- block _time_range_hidden_widget -%}
-    <li>
+    <div class="form-group">
         {{ form_errors(form.start) }}
         {{ form_label(form.start) }}
         <time>
@@ -717,8 +717,8 @@
         <div class="hidden">
             {{ form_widget(form.start) }}
         </div>
-    </li>
-    <li>
+    </div>
+    <div class="hidden">
         {{ form_errors(form.end) }}
         {{ form_label(form.end) }}
         <time>
@@ -734,8 +734,7 @@
                 {{ form_widget(form.start_picker) }}
             </div>
         {% endif %}
-    </li>
-    <li>&nbsp;</li>
+    </div>
 {%- endblock -%}
 
 {#

@@ -57,16 +57,16 @@
                     <div class="content-holder">
                         {% include 'CocoricoCoreBundle:Frontend/Common:_flash.html.twig' %}
 
-                        {{ form_start(form, {'attr': {'id': 'booking-new'}}) }}
-
+                        {{ form_start(form, {'attr': {'id': 'booking-new', 'class': 'form-horizontal'}}) }}
                         <!-- schedule -->
                         {#{{ form_errors(form) }}#}
                         {{ form_errors(form.date_range) }}
                         <div class="price-area">
-                            <ul class="list-inline timing">
-                                <li>
+                            <div class="timing ">
+                                <div class="form-group">
                                     {{ form_errors(form.date_range.start) }}
                                     {{ form_label(form.date_range.start) }}
+                                    
                                     <time datetime="{{ booking.start|date('Y-m-d') }}">
                                         <i class="icon-calendar"></i>
                                         {{ booking.start|localizeddate('short', 'none', 'fr') }}
@@ -74,8 +74,8 @@
                                     {{ form_widget(form.date_range.start, {
                                         'type': 'hidden'
                                     }) }}
-                                </li>
-                                <li class="hidden">
+                                </div>
+                                <div class="hidden">
                                     {{ form_errors(form.date_range.end) }}
                                     {{ form_label(form.date_range.end) }}
 
@@ -86,16 +86,16 @@
                                     {{ form_widget(form.date_range.end, {
                                         'type': 'hidden'
                                     }) }}
-                                </li>
-                                <li>
-                                    <strong> {{ 'booking.duration:'|trans }}</strong>
-                                    {{ booking_duration|add_time_unit_text }}
-                                </li>
+                                </div>
 
                                 {% if not timeUnitIsDay %}
                                     {{ form_widget(form.time_range) }}
                                 {% endif %}
-                            </ul>
+                                <div class="form-group">
+                                    {{ 'booking.duration:'|trans }}
+                                    <strong>{{ booking_duration|add_time_unit_text }}</strong>
+                                </div>
+                            </div>
 		{#
                             <ul class="list-inline price-list">
                                 <li>

@@ -8946,7 +8946,7 @@ label {
     border: #eaebec solid 1px;
 }
 
-.timing li {
+.timing .form-group  {
     float: left;
     width: 33%;
 }
