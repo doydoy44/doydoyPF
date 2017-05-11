@@ -2,52 +2,54 @@
 
 {% include 'CocoricoCoreBundle:Frontend/Common:_flash.html.twig' %}
 
-{{ form_start(form, {'attr': {'class': 'form-category form-inline'}}) }}
+<div class="container">
+    <div class="row">
+        {{ form_start(form, {'attr': {'class': 'form-category'}}) }}
 
-{{ form_errors(form) }}
+        {{ form_errors(form) }}
 
-<fieldset>
-    <legend class="hidden">form-category</legend>
-    <div class="col-xs-12">
-        <div class="col-xs-12 col-sm-4">
-            <div class="col-sm-5 text-right">
-                <strong class="title">
-                    {{ form_label(form.categories) }}
-                </strong>
-            </div>
-            <div class="col-sm-6 col-sm-offset-1">
-                <div class="multiselect">
-                    {{ form_widget(form.categories) }}
+        <fieldset>
+            <legend class="hidden">form-category</legend>
+                <div class="col-xs-12 col-sm-3">
+                    <div class="col-sm-5 text-right">
+                        <strong class="">
+                            {{ form_label(form.categories) }}
+                        </strong>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-1">
+                        <div class="multiselect">
+                            {{ form_widget(form.categories) }}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-xs-12 col-sm-4 col-sm-offset-1">
-            <div class="col-sm-4 text-right">
-                <strong class="title">
-                    {{ form_label(form.location.address, null, {
-                        'required': false
-                    }) }}
-                </strong>
-            </div>
-            <div class="col-sm-6 col-sm-offset-1">
-                <div class="field-holder">
-                    {{ form_errors(form.location.address) }}
-                    {{ form_widget(form.location.address, {
-                        'id': 'location',
-                        'attr': {
-                            'class': 'form-control',
-                            'placeholder': 'listing.search.form.address.placeholder'|trans
-                        }
-                    } ) }}
-                    {{ form_rest(form.location) }}
+                <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+                    <div class="col-sm-5 text-right">
+                        <strong class="">
+                            {{ form_label(form.location.address, null, {
+                                'required': false
+                            }) }}
+                        </strong>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-1">
+                        <div class="">
+                            {{ form_errors(form.location.address) }}
+                            {{ form_widget(form.location.address, {
+                                'id': 'location',
+                                'attr': {
+                                    'class': 'form-control',
+                                    'placeholder': 'listing.search.form.address.placeholder'|trans
+                                }
+                            } ) }}
+                            {{ form_rest(form.location) }}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-2 col-sm-offset-1">
-            <input type="submit" value="{{ 'listing.search'|trans }}" class="btn btn-default">
-        </div>
+                <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+                    <input type="submit" value="{{ 'listing.search'|trans }}" class="btn btn-default">
+                </div>
+        </fieldset>
+
+        {{ form_end(form) }}
     </div>
-</fieldset>
-
-{{ form_end(form) }}
+</div>

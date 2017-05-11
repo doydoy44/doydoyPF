@@ -5677,7 +5677,8 @@ span.btn:focus {
 .form-category {
     position: relative;
     padding: 16px 0 12px;
-    background: #999;
+    background: #f6f6f6;
+    border-radius: 4px;
 }
 
 .form-category .area {
@@ -5791,6 +5792,10 @@ span.btn:focus {
 .form-category .form-holder .col.location {
     float: left;
     width: 25.8%;
+}
+
+.form-category #location {
+    width: 250px;
 }
 
 .form-category .form-holder .col.location .title {
