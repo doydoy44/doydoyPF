@@ -5678,7 +5678,7 @@ span.btn:focus {
     position: relative;
     padding: 16px 0 12px;
     background: #f6f6f6;
-    border-radius: 4px;
+    border-radius: 4px 4px 0 0;
 }
 
 .form-category .area {
@@ -6067,7 +6067,8 @@ span.btn:focus {
 
 /* visual */
 .visual {
-    color: #98999b;
+    /*color: #98999b;*/
+    color: #58595b;
     font-size: 20px;
     margin: 0 0 50px;
     /*background: url(../images/bg-section.png) no-repeat 50% 0 #58595b;*/
