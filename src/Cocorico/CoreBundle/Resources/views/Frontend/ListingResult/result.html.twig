@@ -105,12 +105,10 @@
                                                 <div class="box-holder">
                                                     <div class="head">
                                                         <div class="time-price">
-                                                            <strong class="price">{{ price }}</strong>
-
-                                                            <p>
-                                                                {{ vatInclusionText(app.request.getLocale()) }}
-                                                                / {{ (0)|add_time_unit_text }}
-                                                            </p>
+                                                            <div class="title">
+                                                                <strong class="price">{{ price }}</strong>
+                                                                    / {{ (0)|add_time_unit_text }}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="foot">

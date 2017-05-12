@@ -56,8 +56,10 @@ parameters:
     cocorico.registration_confirmation: false
 
     #Fees in %
-    cocorico.fee_as_asker: 0.1
-    cocorico.fee_as_offerer: 0.05
+#    cocorico.fee_as_asker: 0.1
+#    cocorico.fee_as_offerer: 0.05
+    cocorico.fee_as_asker: 0
+    cocorico.fee_as_offerer: 0.5
 
     #Time unit in minute
     cocorico.time_unit: 60
@@ -114,7 +116,8 @@ parameters:
     #Min listing price in euro cents
     cocorico.listing_price_min: 100
     #Max listing price in euro cents
-    cocorico.listing_price_max: 100000
+#    cocorico.listing_price_max: 100000
+    cocorico.listing_price_max: 50000
 
     #Add marker on listing show page if true or zone if false
     cocorico.listing_map_display_marker: false

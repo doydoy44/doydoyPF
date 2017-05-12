@@ -44,6 +44,11 @@ class DateRangeType extends AbstractType
         if (isset($options["days_max"])) {
             $this->daysMax = $options["days_max"];
         }
+        if ($options['DateEndvisibleForAvailabilities']) {
+            $eventForDateEnd = false;
+        } else {
+            $eventForDateEnd = true;
+        }
 
         $builder->addEventListener(
             FormEvents::PRE_SET_DATA,
@@ -95,7 +100,10 @@ class DateRangeType extends AbstractType
                             );
                     }
                 }
-
+                if (!$options['DateEndvisibleForAvailabilities']) {
+                    $dateEndType = 'date_hidden';
+                } 
+                
                 $form
                     ->add(
                         'start',
@@ -129,8 +137,30 @@ class DateRangeType extends AbstractType
 
         $builder->addViewTransformer($options['transformer']);
         $builder->addEventSubscriber($options['validator']);
+        
+        if ($eventForDateEnd){
+            $builder->addEventListener(
+                    FormEvents::PRE_SUBMIT,
+                    array($this, 'onPreSubmit')
+                )
+            ;
+        }
     }
 
+    /**
+     * Au moment de la submission 
+     * on indique que la date de fin est la même que la date de début
+     * 
+     * @param FormEvent $event
+     */
+    public function onPreSubmit(FormEvent $event)
+    {        
+        $dateRangeArray = $event->getData();
+        $dateRangeArray['end'] = $dateRangeArray['start'];
+        $event->setData($dateRangeArray);
+    }
+
+    
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
@@ -144,7 +174,8 @@ class DateRangeType extends AbstractType
                 'end_day_included' => true,
                 'display_mode' => 'range',
                 'min_start_delay' => 0,
-                'days_max' => $this->daysMax
+                'days_max' => $this->daysMax,
+                'DateEndvisibleForAvailabilities' => false,
             )
         );
 

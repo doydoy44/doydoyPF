@@ -5677,7 +5677,8 @@ span.btn:focus {
 .form-category {
     position: relative;
     padding: 16px 0 12px;
-    /*background: #f6f6f6;*/
+    background: #f6f6f6;
+    border-radius: 4px 4px 0 0;
 }
 
 .form-category .area {
@@ -5689,7 +5690,7 @@ span.btn:focus {
 }
 
 .form-category input.btn-default {
-    top: 0;
+    /*top: 0;*/
     right: 2px;
     width: 178px;
     font-weight: 700;
@@ -5777,7 +5778,8 @@ span.btn:focus {
 }
 
 .form-category .form-holder input.btn-default {
-    top: 15px;
+    /*top: 15px;*/
+    bottom: 15px;
     right: 21px;
     width: 139px;
 }
@@ -5790,6 +5792,10 @@ span.btn:focus {
 .form-category .form-holder .col.location {
     float: left;
     width: 25.8%;
+}
+
+.form-category #location {
+    width: 250px;
 }
 
 .form-category .form-holder .col.location .title {
@@ -6061,14 +6067,14 @@ span.btn:focus {
 
 /* visual */
 .visual {
-    color: #ffffff;
-    text-shadow: 1px 1px 2px black; 
+    /*color: #98999b;*/
+    color: #58595b;
     font-size: 20px;
     margin: 0 0 50px;
     /*background: url(../images/bg-section.png) no-repeat 50% 0 #58595b;*/
     background: url(../images/bg-golf.jpg) no-repeat 50% 0 #FFF;
     background-position: center;
-    padding: 200px 30px;
+    padding: 400px 10px 0 10px;
 }
 
 .visual .title-holder {
@@ -8946,7 +8952,7 @@ label {
     border: #eaebec solid 1px;
 }
 
-.timing li {
+.timing .form-group  {
     float: left;
     width: 33%;
 }

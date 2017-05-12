@@ -74,3 +74,8 @@ services:
             - "%kernel.bundles%"
         tags:
             - { name: twig.extension }
+            
+    cocorico.twig.listing_extension:
+        class: Cocorico\CoreBundle\Twig\ListingExtension
+        tags:
+            - { name: twig.extension }

@@ -32,7 +32,7 @@ class PriceRangeType extends AbstractType
                 'min',
                 'price',
                 array(
-                    'label' => 'listing.form.price',
+                    'label' => false,
                     'currency' => $this->currency,
                     'scale' => 0
                 )

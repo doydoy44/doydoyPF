@@ -16,12 +16,12 @@
                     {{ 'nav.user.about_me.link'|trans }}
                 </a>
             </li>
-            <li role="presentation" class="{{ nav_side_dashboard_current == "payment" ? 'active' : '' }}">
+           {# <li role="presentation" class="{{ nav_side_dashboard_current == "payment" ? 'active' : '' }}">
                 <a href="{{ path('cocorico_user_dashboard_profile_edit_payment') }}" aria-controls="payment info"
                    role="tab" data-text="Information de paiement">
                     {{ 'nav.user.payment.link'|trans }}
                 </a>
-            </li>
+            </li>#}
             <li role="presentation" class="{{ nav_side_dashboard_current == "contact" ? 'active' : '' }}">
                 <a href="{{ path('cocorico_user_dashboard_profile_edit_contact') }}" aria-controls="contact information"
                    role="tab" data-text="Information de contact">
@@ -36,13 +36,13 @@
                     </a>
                 </li>
             {% endif %}
-            <li role="presentation">
+           {# <li role="presentation">
                 <a target="_blank" href="{{ path('cocorico_user_profile_show', {'id': app.user.id }) }}"
                    aria-controls="profil information"
                    role="tab" data-text="Information de profil">
                     {{ 'nav.user.show.link'|trans }}
                 </a>
-            </li>
+            </li>#}
         </ul>
     </nav>
 </aside>

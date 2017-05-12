@@ -15,16 +15,14 @@
 
         {% trans_default_domain 'cocorico_home' %}
 
-        {% block search_form %}
+        {% block search_home_form %}
+            <!-- visual -->
+            <div class="visual">
+                    {{ render(controller('CocoricoCoreBundle:Frontend/ListingSearch:searchHomeForm')) }}
+            </div>
         {% endblock %}
 
         {% block main %}
-            <!-- visual -->
-            <div class="visual">
-                <div class="row">
-                    {{ render(controller('CocoricoCoreBundle:Frontend/ListingSearch:searchHomeForm')) }}
-                </div>
-            </div>
 
             <!-- infoarea -->
             <div class="infoarea container">
